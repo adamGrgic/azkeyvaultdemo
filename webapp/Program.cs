@@ -5,22 +5,22 @@ using Azure.Core;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-SecretClientOptions options = new SecretClientOptions()
-{
-    Retry =
-        {
-            Delay= TimeSpan.FromSeconds(2),
-            MaxDelay = TimeSpan.FromSeconds(16),
-            MaxRetries = 5,
-            Mode = RetryMode.Exponential
-         }
-};
-var client = new SecretClient(new Uri("https://kvtestdemo6969.vault.azure.net/"), new DefaultAzureCredential(), options);
+//SecretClientOptions options = new SecretClientOptions()
+//{
+//    Retry =
+//        {
+//            Delay= TimeSpan.FromSeconds(2),
+//            MaxDelay = TimeSpan.FromSeconds(16),
+//            MaxRetries = 5,
+//            Mode = RetryMode.Exponential
+//         }
+//};
+//var client = new SecretClient(new Uri("https://kvtestdemo6969.vault.azure.net/"), new DefaultAzureCredential(), options);
 
-var secret = client.GetSecret("ExamplePassword");
+//var secret = client.GetSecret("ExamplePassword");
 
-var secretValue = secret.Value;
+//var secretValue = secret.Value;
 
-app.MapGet("/", () => secretValue);
+app.MapGet("/", () => "Hello World");
 
 app.Run();
