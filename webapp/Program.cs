@@ -21,6 +21,6 @@ var secret = client.GetSecret("ExamplePassword");
 
 var secretValue = secret.Value;
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => secretValue);
 
 app.Run();
