@@ -15,7 +15,7 @@ SecretClientOptions options = new SecretClientOptions()
             Mode = RetryMode.Exponential
          }
 };
-var client = new SecretClient(new Uri("https://kvtestdemo6969.vault.azure.net/"), new DefaultAzureCredential(), options);
+var client = new SecretClient(new Uri("https://kvtestdemo69696969.vault.azure.net/"), new DefaultAzureCredential(), options);
 
 var secret = client.GetSecret("ExamplePassword");
 
